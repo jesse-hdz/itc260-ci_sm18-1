@@ -1,5 +1,5 @@
 <?php
-// application/models/Picss_model.php
+// application/models/Pics_model.php
 class Pics_model extends CI_Model {
 
         public function __construct()
@@ -30,6 +30,8 @@ class Pics_model extends CI_Model {
             $url.= '&format=json';
             $url.= '&nojsoncallback=1';
     
+            $response = json_decode(file_get_contents($url));
+            $pics = $response->photos->photo;
             return $pics;
         }
         public function set_tags()
@@ -44,7 +46,7 @@ class Pics_model extends CI_Model {
                 );
 
                 if ($this->db->insert('sm18_flickr', $data)) 
-                { // data inserted, pass back slug
+                { // data inserted, pass back tag
                         redirect('pics/view/' . $slug);
                         return $slug;
                 } else { // failure, pass back false
