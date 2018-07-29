@@ -8,10 +8,8 @@ $this->load->view($this->config->item('theme') . 'header');?>
 
 <?php foreach ($pics as $pic): ?>
 
-        <h3><?php echo $pic['title']; ?></h3>
-        <div class="main">
-                <?php echo $pic['tag']; ?>
-        </div>
+        <h4><?php echo $pic['title']; ?></h4>
+        
         <p><a href="<?php echo site_url('pics/'.$pic['tag']); ?>">View images</a></p>
 
 <?php endforeach; 
