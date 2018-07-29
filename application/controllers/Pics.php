@@ -37,9 +37,9 @@ class Pics extends CI_Controller {
             $this->load->helper('form');
             $this->load->library('form_validation');
 
-            $data['title'] = 'Enter tag to display images';
+            $data['title'] = 'Enter Title and a Tag to view images:';
 
-            $this->form_validation->set_rules('tags', 'Tags', 'required');
+            $this->form_validation->set_rules('tag', 'Tag', 'required');
 
             if ($this->form_validation->run() === FALSE)
             {// form incomplete
