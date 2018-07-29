@@ -38,7 +38,7 @@ class Pics_model extends CI_Model {
         {
                 $this->load->helper('url');
 
-                $slug = url_title($this->input->post('title'), 'dash', TRUE);
+                $slug = url_title($this->input->post('tag'), 'dash', TRUE);
 
                 $data = array(
                         'title' => $this->input->post('title'),
